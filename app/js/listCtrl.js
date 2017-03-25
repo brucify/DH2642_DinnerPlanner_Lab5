@@ -24,9 +24,6 @@ dinnerPlannerApp.controller('ListCtrl', function ($scope,Dinner) {
 
     $scope.selectedMenu = Dinner.getSelectedMenu();
     $scope.getTotalCost = function(){
-        console.log(Dinner.getNumberOfGuests());
-        console.log(Dinner.getTotalPrice());
-        console.log(Dinner.getTotalPrice() * Dinner.getNumberOfGuests());
         return Dinner.getTotalPrice() * Dinner.getNumberOfGuests();
     }
 });

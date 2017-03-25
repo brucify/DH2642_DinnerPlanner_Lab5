@@ -44,7 +44,7 @@ this with Total price of the menu -->
 						{{dish.title}}
 					</td>
 					<td>
-						{{dish.price * getNumberOfGuests()}}
+						{{ (dish.price * getNumberOfGuests()) | currency:'':2}}
 					</td>
 				</tr>
 			</tbody>
@@ -64,7 +64,7 @@ this with Total price of the menu -->
 					<td style="text-align: right;">SEK</td>
 					<td id="totalMenuPrice">
 						<!-- Where the total price locates. -->
-						{{getTotalCost()}}
+						{{getTotalCost() | currency:'':2}}
 					</td>
 				</tr>
 			</tbody>
@@ -72,6 +72,7 @@ this with Total price of the menu -->
 	</div>
 	<div class="container-fluid">
 		<!-- Button here to confirm the dinner menu. -->
-		<a id="confirmDinnerButton" href="#!/overview" type="button" class="btn btn-warning btn-md col-md-12">Confirm Dinner</a>
+		<a ng-show="selectedMenu.length > 0" id="confirmDinnerButton" href="#!/overview" type="button" class="btn btn-warning btn-md col-md-12">Confirm Dinner</a>
+		<a ng-show="selectedMenu.length == 0" ng-disabled="true" type="button" class="btn btn-warning btn-disabled btn-md col-md-12">Confirm Dinner</a>
 	</div>
 </div>

@@ -8,6 +8,3 @@ DH2642 Interaction Programing and Dynamic Wed - Lab 5 - HTML & Javascript
 Authors:
 	Hao LI (hao4@kth.se)
 	Jingjing XIE (jxi@kth.se)
-
-Problems:
-	Why the order of code matters in Javascript (earlier it does not matter?)

@@ -5,7 +5,6 @@
 // the next time.
 dinnerPlannerApp.factory('Dinner',function ($resource, $cookieStore) {
     var that = this;
-
     //API calls
     this.SearchDish = $resource('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search',{},{
         get: {
@@ -21,6 +20,28 @@ dinnerPlannerApp.factory('Dinner',function ($resource, $cookieStore) {
             }
         }
     });
+
+
+
+
+    // $http.get('data.json').success(function (data){
+    //     $scope.dataLocal = data;
+    //     $scope.isLoading = false;
+    // });
+    var dataLocal;
+    $.getJSON("data1.json", function( data ) {
+        dataLocal = data;
+    });
+    this.getDataLocal = function(){
+        return dataLocal;
+    }
+
+
+
+
+
+
+
 
     //Cookies
     this.storeCookie = function(id, content){
